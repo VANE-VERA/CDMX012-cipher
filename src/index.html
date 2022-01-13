@@ -1,49 +1,20 @@
 <!DOCTYPE html>
 <html>
-
-  
   <head>
-    
-
     <meta charset="utf-8">
     <title>Caesar Cipher</title>
-
-
-
-    Alfabeto simple	ABCDEFGHIJKLMNOPQRSTU VWXYZ
-  Alfabeto César (+3)	DEFGHIJKLMNOPQRSTUVWXYZABC
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body>Ejemplo para poder cifrar un texto con el algoritmo de césar
     <div id="root">
-      <h1>Hello  vane
-
-
-
-      </h1>
+    <br>
+  <textarea id="cadena" cols="30" rows="10"></textarea>
+    <br>
+    <p> <input type="butoon" value="Cifrar" onclick="cifrar()" >
+      <input type="butoon" value="Desifrar" onclick="descifrar()" ></p>
+     <div id="resultado">
     </div>
     <script 
-    function encrypt(text, s)
-    {
-        let result=""
-        for (let i = 0; i < text.length; i++)
-        {
-            let char = text[i];
-            if (char.toUpperCase(text[i]))
-            {
-                let ch =  String.fromCharCode((char.charCodeAt(0) + s-65) % 26 + 65);
-                result += ch;
-            }
-            else
-            {
-                let ch = String.fromCharCode((char.charCodeAt(0) + s-97) % 26 + 97);
-                result += ch;
-            }
-        }
-        return result;
-    }
-    
-    
     
     
     src="index.js" type="module"></script>
