@@ -1,2 +1,10 @@
-.caja {front-family:sans serif;
-background-color: rgba(0, 0, 0, 0.863);
+*{
+
+  background-color: blueviolet;  
+  font-size: 100px;
+  font-family:"Roboto";
+  background-image: url('secreto_ok_editada.jpg');
+
+
+
+}
