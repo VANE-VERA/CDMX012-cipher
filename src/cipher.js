@@ -55,15 +55,19 @@
 //export default cipher;
 
 //funcion cifrado
+
 function cifrar() {
 
   document.getElementById("resultado").innerHTML =
     cipher.encode(document.getElementById("cadena").value,
-    document.getElementById("offset").value);
+    //document.getElementById("offset").value);
+    parseInt(document.getElementById("offset").value));
 }
 //funcios descifrar
 function descifrar() {
   document.getElementById("resultado").innerHTML =
     cipher.decode(document.getElementById("cadena").value,
-     document.getElementById("offset").value);
+    // document.getElementById("offset").value);
+     parseInt(document.getElementById("offset").value));
+
 }
