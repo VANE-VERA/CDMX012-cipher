@@ -1,11 +1,40 @@
 *{
 
-  background-color: rgb(114, 85, 141);  
-  font-size: 38px;
+  font-size: 35px;
   font-family:"Roboto"; 
-background-image: url('secreto_ok_editada.jpg');
+align-content: center;
+font-size: 45px;
+front weight:300px;}
 
+#head{
+  
+  color:rgb(231, 197, 223);
+  font-size:
+  text-align: center;
 
+}
+body{
+  margin: 0;
+  
+  background-color: rgb(0, 0, 0);
+  background-image: url(secreto_ok_editada.jpg);
+text-align: center;
+  height: 100vh;
+  text-align: center;
+  
+  
 
+}
+h1{
+  
+  
+  padding: 1rem;
+  text-align: center;
 
+}
+p{
+  font-size: 20px;
+}
+#resultado{
+  background-color: violet;
 }
