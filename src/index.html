@@ -5,16 +5,26 @@
     <title>Caesar Cipher</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>Ejemplo para poder cifrar un texto con el algoritmo de césar
+  <body>DESCIFRA TU MENSAJE
     <br>
   <textarea id="cadena" cols="30" rows="10"></textarea>
     <br>
-    <p> <input type="button" value="Cifrar" onclick="cifrar()" >
-      <input type="button" value="Descifrar" onclick="descifrar()" ></p>
-     <div id="resultado">
-    </div>
+    <p>INGRESA EL N°DE DESPLAZAMIENTO
+<label for="offset">
+    
+    <input type="number" id="offset" name="offset" >  
+</p> 
+<p>
+      <input type="button" value="CIFRAR" onclick="cifrar()" >
 
-    <script src="cipher.js"></script>
+      <input type="button" value="DESCIFRAR" onclick="descifrar()" >
+    
+     <div id="resultado">
+    </label>
+    </div>
+  </p>
+    
+    <script type="text/javascript"  src="cipher.js"></script>
     
     
   </body>

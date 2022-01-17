@@ -1,20 +1,18 @@
 //const cipher = {
 // ...
-//};
-//export default cipher;
-//crerando variable cesar o la funcion anonima que regresara a 
+//}; 
 //una funcion con 3 parametros
-var cesar = cesar || (function () {
+ var cipher = cipher || (function () {
   let proceso = function (txt, desp, action) {
     let replace = (function () {
       //matriz del alfabeto 
-      let abc = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
-        'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+      let abc = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
+        'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
       let l = abc.length;
       // obtener posicion de la llave privada
       return function (c) {
         //vamos  saber la posicion
-        let i = abc.indexOf(c.toLowerCase());
+        let i = abc.indexOf(c.toUpperCase());
         //ddonde estamos en la matriz y como se recorrera y que pasa cuando llegue al final 
         if (i != -1) {
           //primero tenemos la posicion de mi desplazzamiento
@@ -38,7 +36,7 @@ var cesar = cesar || (function () {
 
     })();
     //tenermos que ver que el texto este acode al abc
-    let re = (/([a-z])/ig);
+    let re = (/([A-Z])/ig);
     //una funcion que se encargue de intercambiar
     return String(txt).replace(re, function (match) {
       return replace(match);
@@ -54,13 +52,18 @@ var cesar = cesar || (function () {
     }
   };
 })();
+//export default cipher;
+
 //funcion cifrado
 function cifrar() {
+
   document.getElementById("resultado").innerHTML =
-    cesar.encode(document.getElementById("cadena").value, 3);
+    cipher.encode(document.getElementById("cadena").value,
+    document.getElementById("offset").value);
 }
 //funcios descifrar
 function descifrar() {
   document.getElementById("resultado").innerHTML =
-    cesar.decode(document.getElementById("cadena").value, 3);
+    cipher.decode(document.getElementById("cadena").value,
+     document.getElementById("offset").value);
 }
