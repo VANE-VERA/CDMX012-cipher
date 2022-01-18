@@ -1,10 +1,10 @@
 *{
 
-  font-size: 35px;
+  font-size: 36px;
   font-family:"Roboto"; 
 align-content: center;
-font-size: 45px;
-front weight:300px;}
+font-size: 50px;
+front weight:400px;}
 
 #head{
   
@@ -21,9 +21,7 @@ body{
 text-align: center;
   height: 100vh;
   text-align: center;
-  
-  
-
+  max-width: 100%;
 }
 h1{
   
