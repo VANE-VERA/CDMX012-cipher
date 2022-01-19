@@ -1,6 +1,5 @@
-//const cipher = {
+const cipher = (function () {
 
-var cipher = cipher || (function () {
   let proceso = function (txt, desp, action) {
     let replace = (function () {
       //matriz del alfabeto 
@@ -40,28 +39,29 @@ var cipher = cipher || (function () {
     });
 
   };
-  return {
-    encode: function (txt, desp) {
-      return proceso(txt, desp, true);
-    },
-    decode: function (txt, desp) {
-      return proceso(txt, desp, false);
-    }
-  };
+
+
+ 
+      return {
+        encode: function (txt, desp) {
+          if (typeof (txt) === "string" && typeof (desp) === "number") {
+            return proceso(txt, desp, true);
+          }
+          else {
+            throw new TypeError('Parametros de tipo erroneo');
+          }
+        },
+        decode: function (txt, desp) {
+          if (typeof (txt) === "string" && typeof (desp) === "number") {
+            return proceso(txt, desp, false);
+          }
+          else {
+            throw new TypeError('Parametros de tipo erroneo');
+          }
+        }
+    };
+
+
+
 })();
-
-function cifrar() {
-
-  document.getElementById("resultado").innerHTML =
-    cipher.encode(document.getElementById("cadena").value,
-      parseInt(document.getElementById("offset").value));
-}
-
-function descifrar() {
-  document.getElementById("resultado").innerHTML =
-    cipher.decode(document.getElementById("cadena").value,
-      parseInt(document.getElementById("offset").value));
-
-}
 export default cipher;
-

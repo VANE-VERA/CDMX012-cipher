@@ -6,10 +6,11 @@
     <title>Caesar Cipher</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <h2  style="background: violet;">INSERTA TU MENSAJE
-  </h2>
+  <h1>INSERTA TU MENSAJE
+  </h1>
   
   <body> 
+  
   
     <textarea id="cadena" cols="24" rows="4"></textarea>
 
@@ -18,16 +19,13 @@
   <p> <input type="number" id="offset" name="offset" >  </p>
 
   <p>
-  
-      <input type="button" value="CIFRAR" onclick="cifrar()" >
+    <input id="cifrar" type="button" value="CIFRAR">
 
-      <input type="button" value="DESCIFRAR" onclick="descifrar()" >
+    <input id="descifrar" type="button"  value="DESCIFRAR">
     
-     <div id="resultado"></div>
-
   </p>
-    
-    <script src="cipher.js"></script>
+  <div id="resultado"></div>
+    <script src="index.js" type="module"></script>
     
     
 
