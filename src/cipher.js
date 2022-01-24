@@ -19,11 +19,15 @@ const cipher = (function () {
             //cifrar para adelante
             pos += desp;
             //como se movera
-            pos -= (pos >= l) ? l : 0;
+            while(pos >= l) {
+              pos-=l
+            }
           } else {
             //descifrar en reversa
             pos -= desp;
-            pos += (pos < 0) ? l : 0;
+            while(pos < 0) {
+              pos+=l
+            }
           }
           return abc[pos];
 
@@ -40,28 +44,25 @@ const cipher = (function () {
 
   };
 
-
- 
-      return {
-        encode: function (txt, desp) {
-          if (typeof (txt) === "string" && typeof (desp) === "number") {
-            return proceso(txt, desp, true);
-          }
-          else {
-            throw new TypeError('Parametros de tipo erroneo');
-          }
-        },
-        decode: function (txt, desp) {
-          if (typeof (txt) === "string" && typeof (desp) === "number") {
-            return proceso(txt, desp, false);
-          }
-          else {
-            throw new TypeError('Parametros de tipo erroneo');
-          }
-        }
-    };
-
-
+  return {
+    encode: function (desp, txt) {
+      if (typeof (txt) === "string" && typeof (desp) === "number") {
+        return proceso(txt, desp, true);
+      }
+      else {
+        throw new TypeError('Parametros de tipo erroneo');
+      }
+    },
+    decode: function (desp, txt) {
+      if (typeof (txt) === "string" && typeof (desp) === "number") {
+        return proceso(txt, desp, false);
+      }
+      else {
+        throw new TypeError('Parametros de tipo erroneo');
+      }
+    }
+  };
 
 })();
+
 export default cipher;
