@@ -16,9 +16,9 @@ font-size: 40px;
 }
 
 body{
-background-color: slateblue;
+background-color: rgb(160, 152, 216);
 background-image: url("secreto_ok_editada.jpg");
-background-blend-mode:l;
+background-blend-mode: soft-light;
 background-position: right bottom;
 text-align: center;
 height: 100px;
@@ -35,6 +35,3 @@ p{
 #resultado{
   background-color: rgb(207, 166, 207);
 }
-/*button{
-  border-radius: 5px;
-}*/
