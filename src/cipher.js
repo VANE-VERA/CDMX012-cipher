@@ -1,4 +1,57 @@
+
 const cipher = (function () {
+  // (x + n) % 26
+  // (x - 65 + n) % 26 + 65
+
+  //3
+  let proceso = function (txt, desp) {
+    //4 e inicia nuevamente el abc
+    if (desp < 0 ) {
+      desp += 26
+    }
+
+    let textoResultado = "";
+
+    for (let contador = 0; contador < txt.length; contador++) {
+      let letraIndividual = txt.charCodeAt(contador);
+
+      if (letraIndividual >= 97 && letraIndividual <= 122) { //Minusculas
+        textoResultado += String.fromCharCode((letraIndividual - 97 + desp) % 26 + 97);
+      } else if (letraIndividual >= 65 && letraIndividual <= 90) { //Mayusculas
+        textoResultado += String.fromCharCode((letraIndividual - 65 + desp) % 26 + 65);
+      } else { //Otros caracteres
+        textoResultado += String.fromCharCode(letraIndividual);
+      }
+    }
+
+    return textoResultado;
+  };
+//2.1
+  return {
+    encode: function (desp, txt) {
+      if (typeof (txt) === "string" && typeof (desp) === "number") {
+        return proceso(txt, desp);
+      }
+      else {
+        throw new TypeError('Parametros de tipo erroneo');
+      }
+    },
+    //2.2
+    decode: function (desp, txt) {
+      if (typeof (txt) === "string" && typeof (desp) === "number") {
+        return proceso(txt, 26 - desp);
+      }
+      else {
+        throw new TypeError('Parametros de tipo erroneo');
+      }
+    }
+  };
+
+})();
+
+export default cipher;
+
+/* const cipher = (function () {
 
   let proceso = function (txt, desp, action) {
     let replace = (function () {
@@ -66,3 +119,4 @@ const cipher = (function () {
 })();
 
 export default cipher;
+ */
