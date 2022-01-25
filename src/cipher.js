@@ -29,7 +29,7 @@ const cipher = (function () {
 //2.1
   return {
     encode: function (desp, txt) {
-      if (typeof (txt) === "string" && typeof (desp) === "number") {
+      if (typeof (txt)=== "string" && typeof (desp) === "number") {
         return proceso(txt, desp);
       }
       else {
